@@ -32,8 +32,8 @@
                 if(swatchWidget) {
                     var options = _.object(_.keys(swatchWidget.optionsMap), {});
 
-                    swatchWidget.element.find('.' + swatchWidget.options.classes.attributeClass + '[option-selected]').each(function () {
-                        options[$(this).attr('attribute-id')] = $(this).attr('option-selected');
+                    swatchWidget.element.find('.' + swatchWidget.options.classes.attributeClass + '[data-option-selected]').each(function () {
+                        options[$(this).data('attribute-id')] = $(this).attr('data-option-selected');
                     });
                     result = swatchWidget.options.jsonConfig.optionPrices[_.findKey(swatchWidget.options.jsonConfig.index, options)];
                 } else {
